@@ -1,32 +1,33 @@
 import streamlit as st
-import streamlit.components.v1 as components
-from constant import *
 from app import *
 
-st.set_page_config(page_title="Projetos", page_icon="📚", layout="wide",initial_sidebar_state="collapsed")
+st.set_page_config(page_title='Projetos', page_icon="📚", layout="wide", initial_sidebar_state="collapsed")
 margin_r,body,margin_l = st.columns([0.4, 3, 0.4])
 
 with body:
     menu()
 
-    st.header("📚 Projetos", divider='rainbow')
+    st.header("📚 Projetos", divider="rainbow")
     st.write("")
 
-    def experience_unit(title, date, location, content, button_name, button_link):
-        col1, col2, col3 = st.columns([3,1,1])
+    def experience_unit(title, position, date, location, content):
+        col1, col2, col3 = st.columns([3, 1, 1])
         with col1:
             st.subheader(title)
         with col3:
             st.write("")
             st.markdown("###### " + date)
-        col1, col2, col3 = st.columns([3,1,1])
+        col1, col2, col3 = st.columns([3, 1, 1])
         with col1:
             st.markdown("###### " + position)
         with col3:
-            st.markdown("###### " + location)
+            st.markdown("######   " + location)
         st.write(content)
-        st.link_button(button_name, button_link)
-        st.divider()
 
-        for exp in Experience:
-            experience_unit(exp[0],exp[1],exp[2],exp[3],exp[4],exp[5],exp[6])
+        left_column,  right_column, space_column = st.columns([2,2,10.5])
+        left_column.link_button('Repositório', "https://www.chewy.com")
+        right_column.link_button('Documentação', "https://github.com/theVersan")
+
+    for exp in Experience:
+        experience_unit(*exp)
+        

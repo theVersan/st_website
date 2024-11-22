@@ -38,7 +38,6 @@ pg = st.navigation(
     }
 )
 
-
 def menu():
     bar1, bar2, bar3, bar4 = st.columns([1,1,1,1])
     bar1.page_link("pages/sobre.py", label="Sobre" ' :information_source: ')
@@ -79,5 +78,20 @@ github_logo = '''
 
 #Logo
 
+
+Experience = [
+              [":green[Meta] | Jogo Digital", "Módulo 1", 
+              "05 Fev 2024 – 11 Abr 2024", "Game Development", 
+              """
+              - Desenvolvi um jogo digital em parceria com a Meta, utilizando o framework Phaser.js
+              - O jogo pertence ao gênero RPG com visão Top-Down, 
+              desenvolvido em Javascript
+              - O jogo ficou disponível na web de forma responsiva, podendo ser jogado pelo computador e celular 
+              (Android / IOS) - (Windows / MacOS)
+              - Outras tecnologias usadas foram 
+              Pixel Studio, Tiled, Figma, HTML e CSS .
+              """, 
+              ],
+]
 
 pg.run()
